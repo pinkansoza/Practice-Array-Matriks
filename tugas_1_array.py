@@ -1,10 +1,10 @@
 # 1D Array
-arr1D = [1, 2, 3, 4, 5]  # Membuat array 1 dimensi
+arr1D = [4, 2, 6, 1, 9]  # Membuat array 1 dimensi
 arr1D.clear()  # Mengosongkan array
-arr1D.extend([10, 20, 30, 40, 50])  # Mengisi kembali array
+arr1D.extend([67, 23, 36, 78, 83])  # Mengisi kembali array
 print("1D Array:", arr1D)  # Menampilkan semua data
-print("Data pada indeks 2:", arr1D[2])  # Memanggil data pada indeks tertentu
-del arr1D[1]  # Menghapus data pada indeks tertentu
+print("Data pada indeks 3:", arr1D[3])  # Memanggil data pada indeks tertentu
+del arr1D[3]  # Menghapus data pada indeks tertentu
 print("1D Array setelah penghapusan:", arr1D)
 
 # 2D Array
