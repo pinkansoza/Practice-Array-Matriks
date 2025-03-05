@@ -14,7 +14,7 @@ int main(){
     }   
     
     //3. Mengisi array dengan beberapa data
-    int tmparray[m] = {5, 6, 7, 8}; //penampung data sementara
+    int tmparray[m] = {5, 6, 7, 8};
         //Mengganti setiap elemen pada array dengan elemen pada array penampung
     for (int i = 0; i < m; i++) {
         array[i] = tmparray[i];
@@ -86,7 +86,7 @@ int main(){
     //6. Menghapus salah satu data pada array (mengganti salah satu elemen dengan angka 0)
     matriks[0][1] = 0;
         //Menampilkan array setelah salah satu data dihapus
-    cout << "Array setelah salah satu data dihapus: " << endl;
+    cout << "Array 2D setelah salah satu data dihapus: " << endl;
     for (int i = 0; i < baris; i++){
         for (int j = 0; j < kolom; j++){
             cout << matriks[i][j] << " ";

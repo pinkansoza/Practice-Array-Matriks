@@ -25,16 +25,16 @@ void hapusElemen(int*& array, int& panjang, int indexUntukDihapus) {
     // Memeriksa apakah indeks valid
     if (indexUntukDihapus < 0 || indexUntukDihapus >= panjang) {
         std::cout << "Indeks tidak valid!" << std::endl;
-        return;
+        return; // disini ngecek dulu indexnya apakah ada di dalem array itu
     }
 
     // Menggeser elemen-elemen ke kiri
     for (int i = indexUntukDihapus; i < panjang - 1; ++i) {
-        array[i] = array[i + 1];
+        array[i] = array[i + 1]; 
     }
 
     // Mengurangi ukuran array
-    --panjang;
+    --panjang; 
 }
 
 void tambahElementMatriks(int**& matriks, int& baris, int& kolom, int barisIdx, int kolomIdx, int value) {
@@ -93,24 +93,28 @@ int main(){
     //1. Membuat array 1 dimensi
     int panjang = 4;
     int* array = new int[panjang]{1, 2, 3, 4};
+    // int sampai panjang bikin array baru karena tugasnya diminta untuk nambahin data makanya disini ada data, 
+    //yg bintang ini fungsinya digunakan untuk tambah elemen dan hapus elemen
 
     //2. Mengosongkan array
-    delete[] array;
+    delete[] array; // digunakan untuk menghapus memori, tpi pake kotak ini yg berbentuk array
     
     //3. Mengisi array dengan beberapa data
     array = nullptr;//karena sebelumnya sudah kosong, baris ini memberikan set baru untuk alamt memori nantinya
-    int ukuran = 0;//baris ini digunakan untuk set ukuran array sekaligus index untuk manipulasi elemen di dalam array
+    // alamat array yg disiapkan tdi dihapus, jadi array tdi udah ngga punya alamat khusus
+    int ukuran = 0;//baris ini digunakan untuk set ukuran array sekaligus index untuk manipulasi elemen di dalam array, 
+                    //ini nantinya digunakan untuk membuat array baru di fungsi tambahElemen
 
     int tmparray[panjang] = {5, 6, 7, 8}; //penampung data sementara
         //Mengganti setiap elemen pada array dengan elemen pada array penampung
     for (int i = 0; i < panjang; i++) {
-        tambahElemen(array, ukuran, tmparray[i]);
+        tambahElemen(array, ukuran, tmparray[i]); // ini pake loop biar ngga manggil fungsi ini sebanyak 4 kali
     }
     
     //4. Menampilkan semua data pada array
     cout << "Array 1D: ";
-    for (int i = 0; i < panjang; i++) {
-        cout << array[i] << " ";
+    for (int i = 0; i < ukuran; i++) {
+        cout << array[i] << " "; // mengakses semua index lalu menghasilkan keluaran
     }
     cout << endl;
 
@@ -119,10 +123,10 @@ int main(){
     cout << endl;
 
     //6. Menghapus salah satu data pada array (mengganti salah satu elemen dengan angka 0)
-    hapusElemen(array, panjang, 2);
+    hapusElemen(array, ukuran, 2); // menggeser 1 elemen kedepan sehingga menghilangkan elemen yg ingin dihilangkan
         //Menampilkan array setelah salah satu data dihapus
     cout << "Array 1D setelah salah satu data dihapus: ";
-    for (int i = 0; i < panjang; i++) {
+    for (int i = 0; i < ukuran; i++) {
         cout << array[i] << " ";
     }
     cout << endl;
